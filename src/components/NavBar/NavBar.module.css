@@ -1,0 +1,40 @@
+.navbar {
+    background-color: #101828; /* Темний фон для навігації */
+    padding: 10px 20px;
+  }
+  
+  .navList {
+    display: flex;
+    justify-content: space-around; /* Розташовує лінки рівномірно */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .navItem {
+    margin: 0;
+  }
+  
+  .navLink {
+    color: #ffffff; /* Білий текст */
+    text-decoration: none; /* Без підкреслення */
+    font-size: 18px;
+    font-weight: 500;
+    position: relative; /* Для абсолютного позиціонування псевдоелементів */
+  }
+  
+  .navLink:hover {
+    color: #e15b64; /* Колір при наведенні */
+  }
+  
+  /* Стилі для активного посилання */
+  .navLink.active::after {
+    content: ''; /* Псевдоелемент для підкреслення */
+    position: absolute;
+    bottom: -5px; /* Розташування підкреслення під текстом */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #e15b64; /* Колір підкреслення */
+  }
+  

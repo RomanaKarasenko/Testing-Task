@@ -1,0 +1,85 @@
+/* Загальні стилі контейнера */
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 20px;
+    align-items: center; 
+    text-align: center;  
+  }
+  
+  .header {
+    margin-bottom: 20px;
+  }
+  
+  .header h1 {
+    font-size: 2.5rem;
+    color: var(--bc);
+  }
+  
+  .header p {
+    font-size: 1.2rem;
+    color:#475467;
+  }
+  
+  .services {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin: 20px 0;
+  }
+  
+  .service {
+    background: #F2F4F7;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+  }
+  
+  .service h3 {
+    margin: 10px 0;
+    color: var(--bc);
+  }
+  
+  .service p {
+    color: #475467;
+  }
+  
+  .buttonContainer {
+    margin: 20px 0;
+  }
+  
+  .catalogButton {
+    border-radius: 200px;
+    border: 1px solid transparent;
+    padding: 16px 60px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color 0.25s, background-color 0.25s;
+    background-color: #E44848; 
+    color: #F2F4F7;
+    text-decoration: none; 
+  }
+  
+  .catalogButton:hover {
+    background-color: #D84343;
+  }
+  
+  .catalogButton:focus,
+  .catalogButton:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+  
+  .footer {
+    text-align: center;
+    margin-top: auto;
+    padding: 10px;
+    
+  }
+  
