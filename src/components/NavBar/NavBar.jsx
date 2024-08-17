@@ -1,8 +1,8 @@
 import { Link, useLocation } from 'react-router-dom';
-import css from './Navbar.module.css'; // Стилі для навігації
+import css from './Navbar.module.css'; 
 
 const Navbar = () => {
-  const location = useLocation(); // Отримуємо поточний маршрут
+  const location = useLocation(); 
 
   return (
     <nav className={css.navbar}>

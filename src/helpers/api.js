@@ -4,7 +4,7 @@ const instance = axios.create({
   });
   
   export const fetchCampers = async () => {
-    const { data } = await instance.get(`/campers`);
+    const { data } = await instance.get(`/adverts`);
   
     return data;
   };

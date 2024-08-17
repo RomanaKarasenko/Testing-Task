@@ -1,0 +1,11 @@
+.container{
+   display: flex;
+   flex-direction: column;
+   width: 888px;
+   align-items: center;
+   
+}
+.list{
+   list-style: none;
+   
+}

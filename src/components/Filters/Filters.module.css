@@ -1,4 +1,7 @@
-
+.container{
+  width: 360px;
+  margin-right: 64px;
+}
 .locationInput {
     background-color: #f7f7f7;
     padding: 18px;
@@ -38,8 +41,8 @@
   
   .checkboxWrapper,
   .radioWrapper {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px 8px;
     padding-top: 24px;
     border-top: 1px solid rgba(16, 24, 40, 0.1);

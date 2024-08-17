@@ -1,11 +1,16 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 :root {
   --bc: #101828;
-  --gc:#475467;
-  --rc:#E44848;
-  --yc: #FFC531;
-  --nyc: #F2F4F7;
-  --wc: #F7F7F7;
-
+  --gc: #475467;
+  --rc: #e44848;
+  --yc: #ffc531;
+  --nyc: #f2f4f7;
+  --wc: #f7f7f7;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -23,11 +28,7 @@ a {
 
 body {
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 h1 {
@@ -44,12 +45,11 @@ button {
   font-family: inherit;
   cursor: pointer;
   transition: border-color 0.25s;
-  background-color: #E44848;
-  color: #F2F4F7;
+  background-color: #e44848;
+  color: #f2f4f7;
 }
 button:hover {
- background-color: #D84343;
- ;
+  background-color: #d84343;
 }
 button:focus,
 button:focus-visible {

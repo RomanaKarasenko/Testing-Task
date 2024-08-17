@@ -1,13 +1,16 @@
-import { useForm } from 'react-hook-form';
-import css from './Filters.module.css';
-import sprite from '../../assets/icons/sprite.svg';
+import { useForm } from "react-hook-form";
+import { useDispatch } from 'react-redux';
+import { setFilters } from '../../redux/campers/slice.js';
+import css from "./Filters.module.css";
+import sprite from "../../assets/icons/sprite.svg";
 /*import { FiMapPin } from "react-icons/fi";*/
 
 const Filters = () => {
   const { register, handleSubmit } = useForm();
+  const dispatch = useDispatch();
 
   const onSubmit = data => {
-    console.log(data); 
+    dispatch(setFilters(data));
   };
 
   return (
@@ -19,10 +22,9 @@ const Filters = () => {
             id="location"
             className={css.locationInput}
             type="text"
-            {...register('location')}
+            {...register("location")}
             placeholder="City"
           />
-          
         </label>
 
         <p className={css.filtersText}>Filters</p>
@@ -32,14 +34,14 @@ const Filters = () => {
           <div className={css.checkboxWrapper}>
             <input
               type="checkbox"
-              {...register('details.airConditioner')}
+              {...register("details.airConditioner")}
               className={css.checkbox}
               id="ac"
             />
             <label className={css.checkboxLabel} htmlFor="ac">
               <div className={css.wrapper}>
                 <svg className={css.checkboxIcon}>
-                  <use xlinkHref={`${sprite}#icon-ac`}></use>
+                  <use xlinkHref={`${sprite}#icon-acc`}></use>
                 </svg>
                 <span className={css.checkboxSpan}>AC</span>
               </div>
@@ -47,7 +49,7 @@ const Filters = () => {
 
             <input
               type="checkbox"
-              {...register('transmission')}
+              {...register("transmission")}
               className={css.checkbox}
               value="automatic"
               id="automatic"
@@ -63,7 +65,7 @@ const Filters = () => {
 
             <input
               type="checkbox"
-              {...register('details.kitchen')}
+              {...register("details.kitchen")}
               className={css.checkbox}
               id="kitchen"
             />
@@ -78,7 +80,7 @@ const Filters = () => {
 
             <input
               type="checkbox"
-              {...register('details.TV')}
+              {...register("details.TV")}
               className={css.checkbox}
               id="tv"
             />
@@ -93,7 +95,7 @@ const Filters = () => {
 
             <input
               type="checkbox"
-              {...register('details.shower')}
+              {...register("details.shower")}
               className={css.checkbox}
               id="shower"
             />
@@ -115,7 +117,7 @@ const Filters = () => {
             <input
               type="radio"
               value="panelTruck"
-              {...register('type')}
+              {...register("type")}
               className={css.radio}
               id="van"
               name="type"
@@ -132,7 +134,7 @@ const Filters = () => {
             <input
               type="radio"
               value="fullyIntegrated"
-              {...register('type')}
+              {...register("type")}
               className={css.radio}
               id="integrated"
               name="type"
@@ -149,7 +151,7 @@ const Filters = () => {
             <input
               type="radio"
               value="alcove"
-              {...register('type')}
+              {...register("type")}
               className={css.radio}
               id="alcove"
               name="type"
@@ -165,7 +167,9 @@ const Filters = () => {
           </div>
         </fieldset>
 
-        <button type="submit" className={css.button}>Search</button>
+        <button type="submit" className={css.button}>
+          Search
+        </button>
       </form>
     </section>
   );

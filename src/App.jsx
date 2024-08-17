@@ -1,18 +1,21 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import MainPage from './pages/MainPage/MainPage';
-import CamperCatalog from './pages/CamperCatalog/CamperCatalog';
-import Navbar from './components/NavBar/NavBar';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import MainPage from "./pages/MainPage/MainPage";
+import CamperCatalog from "./pages/CamperCatalog/CamperCatalog";
+import FavouriteCampers from "./pages/FavouriteCampers/FavouriteCampers";
+import Navbar from "./components/NavBar/NavBar";
 
 const App = () => {
   return (
-    <Router>
-       <Navbar />
+    <>
+      <Navbar />
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/catalog" element={<CamperCatalog />} />
+        <Route path="/favourites" element={<FavouriteCampers />} />
+        <Route path="*" element={<MainPage />} />
       </Routes>
-    </Router>
+    </>
   );
 };
 

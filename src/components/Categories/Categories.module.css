@@ -1,19 +1,18 @@
 .icon {
-    width: 20px;
-    height: 20px;
-    fill: #fff;
-    stroke: #111;
-  }
-  .fill {
-    fill: #111;
-    stroke: none;
-  }
-  
-  .text {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.25;
-    text-align: center;
-    color: #101828;
-  }
-  
+  width: 20px;
+  height: 20px;
+  fill: #fff;
+  stroke: #111;
+}
+.fill {
+  fill: #111;
+  stroke: none;
+}
+
+.categoryText {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  text-align: center;
+  color: #101828;
+}
