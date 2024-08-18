@@ -1,14 +1,14 @@
-.heartButton{
-background-color:#FFFFFF ;
+.heartButton {
+  background-color: #ffffff;
 }
-.heartIcon{
-    width: 24px;
-    height: 24px;
-    fill: none;
-    stroke: #101828;
-    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+.likeIcon {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: #101828;
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.favorite{
-    fill: #e44848;
-    stroke: #e44848;
+.liked {
+  fill: #e44848;
+  stroke: #e44848;
 }

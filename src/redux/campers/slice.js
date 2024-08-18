@@ -1,13 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchAllAdverts, fetchMoreAdverts } from "./operations";
 
-const handlePending = (state) => {
-  state.loading = true;
-};
-
-const handleRejected = (state, action) => {
-  state.loading = false;
-  state.error = action.payload;
+const initialFilters = {
+  location: "",
+  details: {
+    airConditioner: false,
+    kitchen: false,
+    TV: false,
+    shower: false,
+  },
+  form: "",
+  transmission: "",
 };
 
 const advertsSlice = createSlice({
@@ -15,76 +18,59 @@ const advertsSlice = createSlice({
   initialState: {
     items: [],
     favorite: [],
-    page: 2,
+    page: 1,
     loading: false,
     error: null,
-    filters: {
-      location: "",
-      details: {
-        airConditioner: false,
-        kitchen: false,
-        TV: false,
-        shower: false,
-      },
-      form: "",
-      transmission: "",
-    },
+    filters: initialFilters,
   },
   reducers: {
     toggleFavorite: (state, action) => {
-      const isFavorite = state.favorite.find(
+      const existingIndex = state.favorite.findIndex(
         (el) => el._id === action.payload._id
       );
 
-      if (isFavorite) {
-        state.favorite = state.favorite.filter(
-          (el) => el._id !== action.payload._id
-        );
+      if (existingIndex !== -1) {
+        state.favorite.splice(existingIndex, 1);
       } else {
         state.favorite.push(action.payload);
       }
     },
     resetPage: (state) => {
-      state.page = 2;
+      state.page = 1;
     },
     setFilters: (state, action) => {
       state.filters = action.payload;
     },
     resetFilters: (state) => {
-      state.filters = {
-        location: "",
-        details: {
-          airConditioner: false,
-          kitchen: false,
-          TV: false,
-          shower: false,
-        },
-        form: "",
-        transmission: "",
-      };
+      state.filters = initialFilters;
     },
   },
   extraReducers: (builder) => {
+    const setLoading = (state) => {
+      state.loading = true;
+      state.error = null;
+    };
+
+    const handleError = (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    };
+
     builder
-      .addCase(fetchAllAdverts.pending, handlePending)
+      .addCase(fetchAllAdverts.pending, setLoading)
       .addCase(fetchAllAdverts.fulfilled, (state, action) => {
         state.loading = false;
-        state.error = null;
         state.items = action.payload;
+        state.page = 2;
       })
-      .addCase(fetchAllAdverts.rejected, handleRejected)
-      .addCase(fetchMoreAdverts.pending, handlePending)
+      .addCase(fetchAllAdverts.rejected, handleError)
+      .addCase(fetchMoreAdverts.pending, setLoading)
       .addCase(fetchMoreAdverts.fulfilled, (state, action) => {
         state.loading = false;
-        state.error = null;
         state.items = [...state.items, ...action.payload];
-        if (action.payload.length < 4) {
-          state.page = "lastPage";
-        } else {
-          state.page = state.page + 1;
-        }
+        state.page = action.payload.length < 4 ? "lastPage" : state.page + 1;
       })
-      .addCase(fetchMoreAdverts.rejected, handleRejected);
+      .addCase(fetchMoreAdverts.rejected, handleError);
   },
 });
 

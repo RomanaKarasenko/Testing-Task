@@ -1,22 +1,30 @@
-import { useCallback } from 'react';
-import Modal from "../Modal/Modal.jsx";
-import { useForModal } from "../../helpers/useForModal.jsx";
-import Categories from "../Categories/Categories.jsx";
-import HeartBtn from "../HeartBtn/HeartBtn.jsx";
+import React, { useState, useCallback } from "react";
+import CustomModal from "../CustomModal/CustomModal";
+import Categories from "../Categories/Categories";
+import HeartBtn from "../HeartBtn/HeartBtn";
+import CamperTabs from "../CamperTabs/CamperTabs";
 import sprite from "../../assets/icons/sprite.svg";
 import css from "./AdvertItem.module.css";
 import { GoStarFill } from "react-icons/go";
+import BookingForm from "../BookingForm/BookingForm";
 
 const AdvertItem = ({ item }) => {
-  const setModal = useForModal();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalHeight, setModalHeight] = useState(720);
 
   const closeModal = useCallback(() => {
-    setModal();
-  }, [setModal]);
+    setIsModalOpen(false);
+  }, []);
 
   const openModal = useCallback(() => {
-    setModal(<Modal onClose={closeModal} item={item} closeModal={closeModal} />);
-  }, [setModal, closeModal, item]);
+    setIsModalOpen(true);
+  }, []);
+
+  const handleTabChange = (tab) => {
+    if (tab === "reviews" || tab === "features") {
+      setModalHeight(1288);
+    }
+  };
 
   return (
     <div className={css.listItem}>
@@ -42,7 +50,7 @@ const AdvertItem = ({ item }) => {
           </p>
           <div className={css.locationWrapper}>
             <svg className={css.locationIcon}>
-              <use xlinkHref={`${sprite}#icon-map-pin`}></use>
+              <use xlinkHref={`${sprite}#icon-map-pin`} />
             </svg>
             <p className={css.location}>{item.location}</p>
           </div>
@@ -50,13 +58,17 @@ const AdvertItem = ({ item }) => {
         <p className={css.description}>{item.description}</p>
         <ul className={css.detailsList}>
           <li>
-            <Categories icon="icon-user" title={`${item.adults} adults`} fill={true} />
+            <Categories
+              icon="icon-user"
+              title={`${item.adults} adults`}
+              fill={true}
+            />
           </li>
           <li>
             <Categories icon="icon-automatic" title={`${item.transmission}`} />
           </li>
           <li>
-            <Categories icon="icon-petrol" title={(item.engine)} fill={true} />
+            <Categories icon="icon-petrol" title={item.engine} fill={true} />
           </li>
           {item.details.kitchen > 0 && (
             <li>
@@ -76,7 +88,48 @@ const AdvertItem = ({ item }) => {
           Show more
         </button>
       </div>
-      
+
+      <CustomModal open={isModalOpen} onClose={closeModal} height={modalHeight}>
+        <div className={css.modalContent}>
+          <div className={css.modalTop}>
+            <div className={css.imageGallery}>
+              {item.gallery.slice(0, 3).map((image, index) => (
+                <img
+                  key={index}
+                  src={image}
+                  alt={`Camper image ${index + 1}`}
+                  width={290}
+                  height={310}
+                  className={css.modalImage}
+                />
+              ))}
+            </div>
+            <div className={css.modalDetails}>
+              <h2>{item.name}</h2>
+              <p>Price: €{item.price}.00</p>
+              <p>
+                Rating: {item.rating} ({item.reviews.length} Reviews)
+              </p>
+              <p>Location: {item.location}</p>
+              <p>{item.description}</p>
+              <ul>
+                <li>Adults: {item.adults}</li>
+                <li>Transmission: {item.transmission}</li>
+                <li>Engine: {item.engine}</li>
+                {item.details.kitchen > 0 && <li>Kitchen: Yes</li>}
+                <li>Beds: {item.details.beds}</li>
+                {item.details.airConditioner > 0 && <li>AC: Yes</li>}
+              </ul>
+            </div>
+          </div>
+          <div className={css.modalBottom}>
+            <CamperTabs item={item} onTabChange={handleTabChange} />
+            <div className={css.bookingFormWrapper}>
+              <BookingForm />
+            </div>
+          </div>
+        </div>
+      </CustomModal>
     </div>
   );
 };

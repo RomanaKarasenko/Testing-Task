@@ -1,8 +1,8 @@
-import { Link, useLocation } from 'react-router-dom';
-import css from './Navbar.module.css'; 
+import { Link, useLocation } from "react-router-dom";
+import css from "./Navbar.module.css";
 
 const Navbar = () => {
-  const location = useLocation(); 
+  const location = useLocation();
 
   return (
     <nav className={css.navbar}>
@@ -10,7 +10,9 @@ const Navbar = () => {
         <li className={css.navItem}>
           <Link
             to="/"
-            className={`${css.navLink} ${location.pathname === '/' ? css.active : ''}`}
+            className={`${css.navLink} ${
+              location.pathname === "/" ? css.active : ""
+            }`}
           >
             Main Page
           </Link>
@@ -18,7 +20,9 @@ const Navbar = () => {
         <li className={css.navItem}>
           <Link
             to="/catalog"
-            className={`${css.navLink} ${location.pathname === '/catalog' ? css.active : ''}`}
+            className={`${css.navLink} ${
+              location.pathname === "/catalog" ? css.active : ""
+            }`}
           >
             Camper Catalog
           </Link>
@@ -26,7 +30,9 @@ const Navbar = () => {
         <li className={css.navItem}>
           <Link
             to="/favourites"
-            className={`${css.navLink} ${location.pathname === '/favourites' ? css.active : ''}`}
+            className={`${css.navLink} ${
+              location.pathname === "/favourites" ? css.active : ""
+            }`}
           >
             Favourite Campers
           </Link>

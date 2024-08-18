@@ -1,11 +1,15 @@
-import css from './LoadMoreBtn.module.css'
+import css from "./LoadMoreBtn.module.css";
+import clsx from "clsx";
+const LoadMoreBtn = ({ handleMoreBtnClick }) => {
+  return (
+    <button
+      type="button"
+      className={clsx(css.loadMoreBtn)}
+      onClick={handleMoreBtnClick}
+    >
+      Load more
+    </button>
+  );
+};
 
-const LoadMoreBtn = ({ onClick }) => {
-    return (
-      <button className={css.loadMoreBtn} onClick={onClick}>
-        Load More
-      </button>
-    );
-  };
-  
-  export default LoadMoreBtn;
+export default LoadMoreBtn;

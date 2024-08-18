@@ -1,5 +1,5 @@
 import css from "./MainPage.module.css";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   return (
@@ -36,7 +36,9 @@ const HomePage = () => {
         </div>
       </section>
       <div className={css.buttonContainer}>
-        <Link to="/catalog" className={css.catalogButton}>Go to Catalog</Link>
+        <Link to="/catalog" className={css.catalogButton}>
+          Go to Catalog
+        </Link>
       </div>
       <footer className={css.footer}>
         <p>© 2024 Camper Rentals. All rights reserved.</p>

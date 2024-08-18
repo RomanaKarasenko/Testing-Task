@@ -1,4 +1,4 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore } from "@reduxjs/toolkit";
 import {
   persistStore,
   persistReducer,
@@ -8,20 +8,20 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
-} from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
-import { advertsReducer } from '../redux/campers/slice';  
+} from "redux-persist";
+import storage from "redux-persist/lib/storage";
+import { advertsReducer } from "../redux/campers/slice";
 
-const advertsPersistConfig = {  
-  key: 'adverts',
+const advertsPersistConfig = {
+  key: "adverts",
   storage,
 };
 
 export const store = configureStore({
   reducer: {
-    adverts: persistReducer(advertsPersistConfig, advertsReducer),  
+    adverts: persistReducer(advertsPersistConfig, advertsReducer),
   },
-  middleware: getDefaultMiddleware =>
+  middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],

@@ -1,9 +1,8 @@
-import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { selectFavorite } from '../../redux/selectors.js';
-import AdvertItem from '../../components/AdvertItem/AdvertItem.jsx';
-import css from './FavouriteCampers.module.css';
-
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectFavorite } from "../../redux/selectors.js";
+import AdvertItem from "../../components/AdvertItem/AdvertItem.jsx";
+import css from "./FavouriteCampers.module.css";
 
 const FavouriteCampers = () => {
   const favourite = useSelector(selectFavorite);
@@ -11,8 +10,8 @@ const FavouriteCampers = () => {
 
   return favourite.length > 0 ? (
     <section className={css.container}>
-       <ul className={css.list}>
-        {favourite.map(item => {
+      <ul className={css.list}>
+        {favourite.map((item) => {
           return (
             <li key={item._id} className={css.item}>
               <AdvertItem item={item} />
@@ -27,7 +26,7 @@ const FavouriteCampers = () => {
       <button
         className={css.btn}
         onClick={() => {
-          navigate('/catalog');
+          navigate("/catalog");
         }}
       >
         Explore Our Campers

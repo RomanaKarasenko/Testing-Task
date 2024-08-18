@@ -1,15 +1,15 @@
 import { useForm } from "react-hook-form";
-import { useDispatch } from 'react-redux';
-import { setFilters } from '../../redux/campers/slice.js';
+import { useDispatch } from "react-redux";
+import { setFilters } from "../../redux/campers/slice.js";
 import css from "./Filters.module.css";
 import sprite from "../../assets/icons/sprite.svg";
-/*import { FiMapPin } from "react-icons/fi";*/
+import { FiMapPin } from "react-icons/fi";
 
 const Filters = () => {
   const { register, handleSubmit } = useForm();
   const dispatch = useDispatch();
 
-  const onSubmit = data => {
+  const onSubmit = (data) => {
     dispatch(setFilters(data));
   };
 
@@ -18,13 +18,16 @@ const Filters = () => {
       <form className={css.filtersForm} onSubmit={handleSubmit(onSubmit)}>
         <label className={css.locationLabel} htmlFor="location">
           Location
-          <input
-            id="location"
-            className={css.locationInput}
-            type="text"
-            {...register("location")}
-            placeholder="City"
-          />
+          <div className={css.inputWrapper}>
+            <FiMapPin className={css.icon} />
+            <input
+              id="location"
+              className={css.locationInput}
+              type="text"
+              {...register("location")}
+              placeholder="City"
+            />
+          </div>
         </label>
 
         <p className={css.filtersText}>Filters</p>
