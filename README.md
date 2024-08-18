@@ -1,8 +1,25 @@
-# React + Vite
+# CamperWay
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+CamperWay is a React application built with Vite that provides an intuitive interface for browsing and booking campers.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Browse camper listings with detailed information.
+- View camper features and reviews.
+- Book campers through a user-friendly form.
+
+## Pages
+- Main Page
+- Camper Catalog
+- Favourite Campers
+
+
+## Technologies Used
+
+- **React**: A JavaScript library for building user interfaces.
+- **Vite**: A build tool that provides a fast development experience.
+- **@vitejs/plugin-react**: Provides fast refresh for React using Babel.
+- **@vitejs/plugin-react-swc**: An alternative plugin that uses SWC for fast refresh.
+
+## License
+- This project is licensed under the MIT License. See the LICENSE file for details.
