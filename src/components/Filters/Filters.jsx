@@ -35,12 +35,6 @@ const Filters = () => {
         <fieldset className={css.equipmentFieldset}>
           <legend className={css.equipmentLegend}>Vehicle equipment</legend>
           <div className={css.checkboxWrapper}>
-            <input
-              type="checkbox"
-              {...register("details.airConditioner")}
-              className={css.checkbox}
-              id="ac"
-            />
             <label className={css.checkboxLabel} htmlFor="ac">
               <div className={css.wrapper}>
                 <svg className={css.checkboxIcon}>
@@ -50,13 +44,6 @@ const Filters = () => {
               </div>
             </label>
 
-            <input
-              type="checkbox"
-              {...register("transmission")}
-              className={css.checkbox}
-              value="automatic"
-              id="automatic"
-            />
             <label className={css.checkboxLabel} htmlFor="automatic">
               <div className={css.wrapper}>
                 <svg className={css.checkboxIcon}>
@@ -66,12 +53,6 @@ const Filters = () => {
               </div>
             </label>
 
-            <input
-              type="checkbox"
-              {...register("details.kitchen")}
-              className={css.checkbox}
-              id="kitchen"
-            />
             <label className={css.checkboxLabel} htmlFor="kitchen">
               <div className={css.wrapper}>
                 <svg className={css.checkboxIcon}>
@@ -81,12 +62,6 @@ const Filters = () => {
               </div>
             </label>
 
-            <input
-              type="checkbox"
-              {...register("details.TV")}
-              className={css.checkbox}
-              id="tv"
-            />
             <label className={css.checkboxLabel} htmlFor="tv">
               <div className={css.wrapper}>
                 <svg className={css.checkboxIcon}>
@@ -96,12 +71,6 @@ const Filters = () => {
               </div>
             </label>
 
-            <input
-              type="checkbox"
-              {...register("details.shower")}
-              className={css.checkbox}
-              id="shower"
-            />
             <label className={css.checkboxLabel} htmlFor="shower">
               <div className={css.wrapper}>
                 <svg className={css.checkboxIcon}>
@@ -117,14 +86,6 @@ const Filters = () => {
           <legend className={css.typeLegend}>Vehicle type</legend>
 
           <div className={css.radioWrapper}>
-            <input
-              type="radio"
-              value="panelTruck"
-              {...register("type")}
-              className={css.radio}
-              id="van"
-              name="type"
-            />
             <label className={css.radioLabel} htmlFor="van">
               <div className={css.wrapper}>
                 <svg className={css.radioIcon}>
@@ -134,14 +95,6 @@ const Filters = () => {
               </div>
             </label>
 
-            <input
-              type="radio"
-              value="fullyIntegrated"
-              {...register("type")}
-              className={css.radio}
-              id="integrated"
-              name="type"
-            />
             <label className={css.radioLabel} htmlFor="integrated">
               <div className={css.wrapper}>
                 <svg className={css.radioIcon}>
@@ -151,14 +104,6 @@ const Filters = () => {
               </div>
             </label>
 
-            <input
-              type="radio"
-              value="alcove"
-              {...register("type")}
-              className={css.radio}
-              id="alcove"
-              name="type"
-            />
             <label className={css.radioLabel} htmlFor="alcove">
               <div className={css.wrapper}>
                 <svg className={css.radioIcon}>
