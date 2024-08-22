@@ -14,10 +14,30 @@
   font-size: 18px;
   line-height: 1.33333;
   color: #101828;
+  margin-bottom: auto;
 }
 .filledStar {
   fill: #ffc531;
   width: 16px;
   height: 16px;
   margin-right: 4px;
+}
+.initial{
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  background-color: #F2F4F7;
+  align-content: center;
+  align-self: center;
+  padding: 15px 22px;
+  font-weight: 600;
+  color: var(--rc)
+}
+.header{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-content: center;
+  align-items: center;
 }

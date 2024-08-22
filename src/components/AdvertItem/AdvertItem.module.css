@@ -120,7 +120,6 @@
 .modalDetails {
   overflow-y: auto;
   padding-right: 16px;
-  max-height: 250px;
 }
 .modalImage {
   object-fit: cover;

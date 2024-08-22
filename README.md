@@ -13,7 +13,7 @@ CamperWay is a React application built with Vite that provides an intuitive inte
 - Camper Catalog
 - Favourite Campers
 
-
+![ Page Screenshot](./src/assets/icons/myImg.jpg)
 ## Technologies Used
 
 - **React**: A JavaScript library for building user interfaces.
@@ -21,5 +21,3 @@ CamperWay is a React application built with Vite that provides an intuitive inte
 - **@vitejs/plugin-react**: Provides fast refresh for React using Babel.
 - **@vitejs/plugin-react-swc**: An alternative plugin that uses SWC for fast refresh.
 
-## License
-- This project is licensed under the MIT License. See the LICENSE file for details.

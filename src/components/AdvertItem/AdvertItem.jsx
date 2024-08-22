@@ -10,7 +10,7 @@ import BookingForm from "../BookingForm/BookingForm";
 
 const AdvertItem = ({ item }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalHeight, setModalHeight] = useState(720);
+  const [modalHeight, setModalHeight] = useState(820);
 
   const closeModal = useCallback(() => {
     setIsModalOpen(false);
@@ -22,7 +22,7 @@ const AdvertItem = ({ item }) => {
 
   const handleTabChange = (tab) => {
     if (tab === "reviews" || tab === "features") {
-      setModalHeight(1288);
+      setModalHeight(1000);
     }
   };
 

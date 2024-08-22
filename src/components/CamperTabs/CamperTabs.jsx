@@ -41,14 +41,14 @@ const CamperTabs = ({ item, onTabChange }) => {
         <Tab
           label="Features"
           sx={{
-            borderBottom: value === 0 ? "2px solid #e44848" : "none",
+            borderBottom: value === 0 ? "1px solid #e44848" : "none",
             color: value === 0 ? "#007bff" : "inherit",
           }}
         />
         <Tab
           label="Reviews"
           sx={{
-            borderBottom: value === 1 ? "2px solid #e44848" : "none",
+            borderBottom: value === 1 ? "1px solid #e44848" : "none",
             color: value === 1 ? "#007bff" : "inherit",
           }}
         />
